@@ -1,0 +1,538 @@
+@import "theme.css";
+
+
+/* ───────────────────────────────────────────────────────────────┤ global ├───
+*/
+* {
+  min-height: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ──────────────────────────────────────────────────────────┤ drop shadow ├───
+*/
+window#waybar {
+  background: @main-bg-dos;
+}
+
+/* ───────────────────────────────────────────────────────────┤ background ├───
+*/
+window#waybar > box {
+  background: @main-bg-dos;
+  margin: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────┤ tooltips ├───
+*/
+tooltip {
+  background: @main-bg;
+  border: 1.5px solid @main-br;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @main-fg;
+  margin: -1.5px 3px;
+}
+
+/* ──────────────────────────────────────────────────────────────┤ general ├───
+*/
+#custom-theme,
+#workspaces,
+#window,
+#custom-temperature,
+#memory,
+#cpu,
+#idle_inhibitor,
+#clock,
+#custom-wifi,
+#bluetooth,
+#custom-update,
+#mpris,
+#language,
+#pulseaudio,
+#backlight,
+#battery,
+#custom-power {
+  opacity: 1;
+  color: @module-fg;
+  padding: 0 4px;
+}
+
+#custom-left1,
+#custom-left2,
+#custom-left3,
+#custom-left4,
+#custom-left5,
+#custom-left6,
+#custom-left7,
+#custom-left8 {
+  margin-bottom: 0;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#custom-right1,
+#custom-right2,
+#custom-right3,
+#custom-right4,
+#custom-right5 {
+  margin-bottom: 0;
+  padding-right: 3px;
+  text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ───────────────────────────────────────────────────────┤ theme switcher ├───
+*/
+/*#custom-theme {
+  background: @main-bg-dos;
+}
+
+#custom-theme:hover {
+  color: @hover-fg;
+}*/
+
+
+#custom-theme {
+  color: @main-bg;
+  background: @power;
+  font-size: 16px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 0px 8px 0px 2px;
+  padding: 0 2px 0 2px;
+}
+
+#custom-theme:hover {
+  color: @hover-fg;
+  background: @hover-bg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────┤ workspaces ├───
+*/
+#custom-left1 {
+  color: @workspaces;
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  padding-left: 2px;
+}
+
+#workspaces {
+  background: @workspaces;
+}
+
+#workspaces button {
+  color: @module-fg;
+  border-radius: 8px;
+  box-shadow: none;
+  margin: 2px 0;
+  padding: 0 2px;
+  transition: none;
+}
+
+#workspaces button:hover {
+  color: @hover-fg;
+  background: @hover-bg;
+  text-shadow: none;
+}
+
+#workspaces button.active {
+  color: @active-fg;
+  background: @super-pink;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+  margin: 2px;
+  padding: 0 6px;
+}
+
+#custom-right1 {
+  color: @workspaces;
+  background: rgba(0, 0, 0, 0);
+  text-shadow: 3px 0 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+}
+
+/* ──────────────────────────────────────────────────────────┤ temperature ├───
+*/
+#custom-paddc {
+  padding-right: 22px;
+}
+
+#custom-left2 {
+  color: @temperature;
+  background: rgba(0, 0, 0, 0);
+  padding-left: 3px;
+}
+
+#custom-temperature {
+  background: @temperature;
+  padding: 0 8 0 4px;
+}
+
+/* ───────────────────────────────────────────────────────────────┤ memory ├───
+*/
+#custom-left3 {
+  color: @memory;
+  background: @temperature;
+  padding-left: 3px;
+}
+
+#memory {
+  background: @memory;
+  padding: 0 0 0 0px;
+}
+
+#memory.warning {
+  color: @warning;
+}
+
+#memory.critical {
+  color: @critical;
+}
+
+/* ──────────────────────────────────────────────────────────────────┤ cpu ├───
+*/
+#custom-left4 {
+  color: @cpu;
+  background: @memory;
+  padding-left: 3px;
+}
+
+#cpu {
+  background: @cpu;
+  padding: 0 7 0 0px;
+}
+
+#custom-leftin1 {
+  color: @cpu;
+  margin-bottom: -1px;
+}
+
+/* ──────────────────────────────────────────────────────────┤ distro icon ├───
+*/
+#custom-left5 {
+  color: @blue-main;
+  /* background: rgba(0, 0, 0, 0); */
+  text-shadow: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+#custom-distro {
+  color: @distro-fg;
+  background: @blue-main;
+  font-size: 16px;
+  /* margin: 0 -1px -2px 0; */
+  /* padding: 0 0 0 3px; */
+  /* text-shadow: 0 0 1.5px rgba(0, 0, 0, 1); */
+
+
+  /* color: @main-bg; */
+  /* background: @power; */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.6); */
+  /* border-radius: 10px; */
+  margin: 0px 0px 0px 0px;
+  /* margin: 0px 0px 0px 0; */
+  padding: 0px 11.5px 0px 4px;
+}
+
+#custom-right2 {
+  color: @blue-main;
+  /* background: rgba(0, 0, 0, 0); */
+  text-shadow: none;
+  margin-bottom: 0px;
+  padding-right: 0px;
+}
+
+/* ─────────────────────────────────────────────────────────────────┤ time ├───
+*/
+#custom-rightin1 {
+  color: @time;
+  margin-bottom: -1px;
+}
+
+#idle_inhibitor {
+  background: @time;
+  padding: 0 0 0 7px;
+}
+
+#idle_inhibitor:hover {
+  color: @hover-fg;
+}
+
+#clock.time {
+  background: @time;
+  margin-left: 0px;
+  padding-right: 4px;
+  padding-left: 8px;
+}
+
+#custom-right3 {
+  color: @time;
+  background: @date;
+}
+
+/* ─────────────────────────────────────────────────────────────────┤ date ├───
+*/
+#clock.date {
+  padding: 0 4 0 8px;
+  background: @date;
+}
+
+#clock.date:hover {
+  color: @hover-fg;
+}
+
+#custom-right4 {
+  color: @date;
+  background: @tray;
+}
+
+/* ────────────────────────────────────────────────────────────────┤ wi-fi ├───
+*/
+#custom-wifi {
+  background: @tray;
+  padding: 0 8px 0 5px;
+}
+
+#custom-wifi:hover {
+  color: @hover-fg;
+}
+
+/* ────────────────────────────────────────────────────────────┤ bluetooth ├───
+*/
+#bluetooth {
+  background: @tray;
+  padding-right: 5px;
+}
+
+#bluetooth:hover {
+  color: @hover-fg;
+}
+
+/* ────────────────────────────────────────────────────────┤ system update ├───
+*/
+#custom-update {
+  padding-right: 8px;
+  background: @tray;
+}
+
+#custom-update:hover {
+  color: @hover-fg;
+}
+
+#custom-right5 {
+  color: @tray;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* ───────────────────────────────────────────────────────────┤ media info ├───
+*/
+#mpris {
+  background: rgba(0, 0, 0, 0);
+  padding: 0 8px 0;
+}
+
+#mpris:hover {
+  color: @hover-fg;
+}
+
+/* ───────────────────────────────────────────────────────────┤ language ├───
+*/
+
+#language {
+  background: @bg0;
+  padding-left: 3px;
+}
+
+/* ────────────────────────────────────────────────────────┤ output device ├───
+*/
+#custom-left6 {
+  color: @bg0;
+  background: rgba(0, 0, 0, 0);
+  padding-left: 3px;
+}
+
+#custom-left8 {
+  color: @bg2;
+  background: @bg1;
+}
+
+#pulseaudio {
+  color: @module-fg;
+  background: @bg2;
+}
+
+#pulseaudio:hover {
+  color: @hover-fg;
+}
+
+/* ───────────────────────────────────────────────────────────┤ brightness ├───
+*/
+#custom-left7 {
+  color: @bg1;
+  background: @bg0;
+  padding-left: 2px;
+}
+
+#backlight {
+  background: @bg1;
+}
+
+/* ──────────────────────────────────────────────────────────────┤ battery ├───
+*/
+
+#custom-left9 {
+  color: @bg3;
+  background: @bg2;
+  /* padding-left: 2px; */
+  margin-bottom: 0;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#battery {
+  color: @module-fg;
+  background: @bg3;
+}
+
+#battery.warning {
+  color: @warning;
+}
+
+#battery.critical {
+  color: @critical;
+}
+
+#battery.charging {
+  color: @charging;
+}
+
+/* ─────────────────────────────────────────────────────────┤ power button ├───
+*/
+#custom-leftin2 {
+  color: @bg3;
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: -1px;
+}
+
+#custom-power {
+  color: @main-bg;
+  font-size: 16px;
+  background: @power;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 0px 2px 0px 2px;
+}
+
+#custom-power:hover {
+  color: @hover-fg;
+  background: @hover-bg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* ───────────────────────────────────────────────────────────┤ font sizes ├───
+*/
+/*
+  NOTE: Be careful when changing font sizes, as they can affect alignment.
+
+  Try adjusting whole numbers first, then refine with decimals.
+
+  If you increase or decrease a value, make the same change to all properties
+  in this section to keep the layout consistent.
+*/
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+tooltip label,
+#window label,
+#mpris {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* ──────────────────────────────────────────────────┤ left & right arrows ├───
+*/
+#custom-left1,
+#custom-left2,
+#custom-left3,
+#custom-left4,
+#custom-left5,
+#custom-left6,
+#custom-left7,
+#custom-left8,
+#custom-right1,
+#custom-right2,
+#custom-right3,
+#custom-right4,
+#custom-right5 {
+  font-size: 20px;
+}
+
+/* ─────────────────────────────────────────────────┤ left & right inverse ├───
+*/
+#custom-leftin1,
+#custom-leftin2,
+#custom-rightin1 {
+  font-size: 22.5px;
+}
+
+/* ──────────────────────────────────────────────────────────┤ distro icon ├───
+*/
+/* #custom-distro { */
+/*   font-size: 16px; */
+/* } */
+
+#custom-left5,
+#custom-right2 {
+  font-size: 20px;
+}
+
+/*
+  Adjust these properties as well to keep the design consistent.
+*/
+
+/* ───────────────────────────────────────────────────────────┤ workspaces ├───
+*/
+#workspaces button {
+  border-radius: 8px;
+  padding: 0 4px;
+}
+
+#workspaces button.active {
+  padding: 0 6px;
+}
+
+/* ─────────────────────────────────────────────────────────┤ power button ├───
+*/
+#custom-power {
+  border-radius: 10px;
+  padding: 0 6px 0 9px;
+}
+
+/*
+  NOTE: If your changes don’t take effect, they might be overridden by
+  `animation.css`.
+
+  To fix this, copy your updated font sizes from this file and paste them into
+  the corresponding `*_expand` keyframes.
+
+  For example, if you change the font size of the distro icon, update it in
+  `distro_expand`.
+
+  - distro icon → `distro_expand` (line 137)
+  - power button → `power_expand` (line 152)
+  - all other modules → `module_expand` (line 166)
+*/
+
+@import "animation.css";

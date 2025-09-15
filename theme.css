@@ -1,0 +1,83 @@
+/* Cyberpunk Neon Theme (Structured) */
+
+@define-color bg0_h           #0a0a0a;
+@define-color bg0             #111111;
+@define-color bg1             #1c1c1c;
+@define-color bg2             #2a2a2a;
+@define-color bg3             #333333;
+@define-color bg4             #3f3f3f;
+@define-color gray            #5f5f5f;
+@define-color fg4             #a0a0a0;
+@define-color fg3             #c0c0c0;
+@define-color fg2             #e0e0e0;
+@define-color fg1             #f0f0f0;
+@define-color fg0             #ffffff;
+
+@define-color red             #ff005f;
+@define-color bright_red      #ff3366;
+@define-color green           #00ff9f;
+@define-color bright_green    #66ffc2;
+@define-color yellow          #ffd700;
+@define-color super-pink      #e23fe2;
+@define-color blue-main       #00ffff;
+@define-color yellow_dos      #f7d04b;
+@define-color bright_yellow   #ffff66;
+@define-color blue            #00cfff;
+@define-color bright_blue     #66e0ff;
+@define-color purple          #cc66ff;
+@define-color bright_purple   #e299ff;
+@define-color aqua            #00ffff;
+@define-color bright_aqua     #99ffff;
+@define-color orange          #ff8800;
+@define-color bright_orange   #ffaa00;
+
+@define-color white           #ffffff;
+@define-color black           #000000;
+
+/* 
+  bg - background
+  fg - foreground
+  br - border
+*/
+
+/* Main Colors */
+
+@define-color shadow          shade(@bg0_h, 0.5);
+@define-color main-fg         @fg0;
+
+@define-color main-bg         @bg0_h;
+
+@define-color main-bg-dos     rgba(10, 10, 10, 0.4);
+
+@define-color main-br         @fg0;
+
+@define-color active-bg       @yellow_dos;
+@define-color active-fg       @bg0_h;
+
+@define-color hover-bg        @bg2;
+@define-color hover-fg        alpha(@fg0, 0.75);
+
+/* Module Colors */
+
+@define-color module-fg       @fg0;
+@define-color workspaces      @bg2;
+
+@define-color temperature     @bg0;
+@define-color memory          @bg1;
+@define-color cpu             @bg2;
+@define-color distro-fg       @black;
+@define-color distro-bg       @yellow_dos;
+@define-color time            @bg2;
+@define-color date            @bg1;
+@define-color tray            @bg0;
+
+@define-color pulseaudio      @bg0;
+@define-color backlight       @bg2;
+@define-color battery         @bg2;
+@define-color power           @yellow_dos;
+
+/* State Colors */
+
+@define-color warning         @bright_orange;
+@define-color critical        @bright_red;
+@define-color charging        @bright_green;
