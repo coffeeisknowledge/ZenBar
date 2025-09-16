@@ -165,7 +165,8 @@
   // ─────────────────────────────────────────────────────────────┤ distro ├───
   "custom/distro": {
     "format": "",
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "~/.config/rofi/applets/bin/screenshot.sh"
   },
   // ─────────────────────────────────────────────────────┤ idle inhibitor ├───
   "idle_inhibitor": {
@@ -279,7 +280,7 @@
       "headset": "󰋋"
     },
     "tooltip-format": "Device: {desc}",
-    // "on-click": "~/.config/waybar/scripts/volume-control.sh -o m",
+    "on-click": "~/.config/rofi/applets/bin/volume.sh",
     // "on-scroll-up": "~/.config/waybar/scripts/volume-control.sh -o i",
     // "on-scroll-down": "~/.config/waybar/scripts/volume-control.sh -o d",
     "min-length": 6,
@@ -307,13 +308,40 @@
       "",
       ""
     ],
-    "tooltip": false,
+    "tooltip-format": "Brightness control",
+    "on-click": "~/.config/rofi/applets/bin/brightness.sh",
     // "on-scroll-up": "~/.config/waybar/scripts/brightness-control.sh -o i",
     // "on-scroll-down": "~/.config/waybar/scripts/brightness-control.sh -o d",
     "min-length": 6,
     "max-length": 6
   },
   // ────────────────────────────────────────────────────────────┤ battery ├───
+  // "battery": {
+  //   "states": {
+  //     "warning": 20,
+  //     "critical": 10
+  //   },
+  //   "format": "{icon} {capacity}%",
+  //   "format-icons": [
+  //     "󰂎",
+  //     "󰁻",
+  //     "󰁼",
+  //     "󰁽",
+  //     "󰁾",
+  //     "󰁿",
+  //     "󰂀",
+  //     "󰂁",
+  //     "󰂂",
+  //     "󰁹"
+  //   ],
+  //   "format-charging": " {capacity}%",
+  //   "tooltip-format": "Discharging: {time}",
+  //   "tooltip-format-charging": "Charging: {time}",
+  //   "interval": 1,
+  //   "min-length": 6,
+  //   "max-length": 6
+  // },
+
   "battery": {
     "states": {
       "warning": 20,
@@ -332,19 +360,21 @@
       "󰂂",
       "󰁹"
     ],
+    "on-click": "~/.config/rofi/applets/bin/battery.sh",
     "format-charging": " {capacity}%",
-    "tooltip-format": "Discharging: {time}",
-    "tooltip-format-charging": "Charging: {time}",
+    "tooltip-format": "{capacity}% — On battery",
+    "tooltip-format-charging": "{capacity}% — Charging",
     "interval": 1,
     "min-length": 6,
-    "max-length": 6
+    "max-length": 6,
+    "path": "/sys/class/power_supply/BAT0"
   },
   // ───────────────────────────────────────────────────────┤ power button ├───
   "custom/power": {
     "format": "",
     "tooltip": false,
     // "tooltip-format": "Power Menu",
-    "on-click": "~/.config/waybar/scripts/power-menu.sh",
+    "on-click": "~/.config/rofi/applets/bin/powermenu.sh",
     "min-length": 3
   },
   // ────────────────────────────────────────────────────────────┤ padding ├───
